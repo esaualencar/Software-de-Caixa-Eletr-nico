@@ -47,7 +47,6 @@ public class CaixaEletronico {
 			String numeroDaConta = hardware.NumeroDaContaCartao(cartao);
 			ContaCorrente conta = servicoRemoto.recuperarConta(numeroDaConta);
 			String resposta ="O saldo é R$"+ df.format(conta.getSaldoTotal());
-			resposta.replace('.', ',');
 			return resposta.replace('.', ',');
 		} else {
 			throw new FalhaLoginException("Usuário não está logado");
